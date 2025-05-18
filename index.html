@@ -90,10 +90,12 @@
             background-color: #596418;
         }
     </style>
-    </style>
 </head>
 <body>
-
+    <header>
+        <h1>Kom bij me eten!</h1>
+        <p>Dit is wat ik allemaal voor je kan bereiden. Alles is vega! Behalve de vis. Dus eigenlijk is het pesco, maar wie zegt dat nou? </p>
+    </header>
 
     <section class="gerechten-container">
         <!-- Gerecht 1 -->
@@ -166,29 +168,9 @@
             </div>
         </div>
 
+       
+    </section>
 
-
-
-    <script>
-        // Functie om modal te openen
-        function openModal(id) {
-            document.getElementById(id).style.display = "block";
-        }
-        
-        // Functie om modal te sluiten
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
-        }
-        
-        // Sluit de modal als er buiten geklikt wordt
-        window.onclick = function(event) {
-            var modals = document.getElementsByClassName("modal");
-            for (var i = 0; i < modals.length; i++) {
-                if (event.target == modals[i]) {
-                    modals[i].style.display = "none";
-                }
-            }
-        }
-    </script>
+   
 </body>
 </html>
