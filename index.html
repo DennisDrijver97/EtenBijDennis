@@ -42,8 +42,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
             border: 1px solid #FFE8BE;
-            cursor: pointer;
-            position: relative;
         }
         .gerecht:hover {
             transform: translateY(-5px);
@@ -70,59 +68,6 @@
             font-size: 0.8em;
             margin-bottom: 10px;
         }
-        .ingredienten-knop {
-            background-color: #FFCF58;
-            color: #596418;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            font-weight: bold;
-            font-size: 0.9em;
-        }
-        .ingredienten-knop:hover {
-            background-color: #F29400;
-            color: white;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.7);
-        }
-        .modal-content {
-            background-color: white;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #FFE8BE;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 600px;
-            position: relative;
-        }
-        .sluit-knop {
-            color: #596418;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .sluit-knop:hover {
-            color: #F29400;
-        }
-        .ingredienten-lijst {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .ingredienten-lijst li {
-            margin-bottom: 5px;
-        }
         footer {
             text-align: center;
             margin-top: 50px;
@@ -144,13 +89,7 @@
         .contact-knop:hover {
             background-color: #596418;
         }
-        .info-text {
-            text-align: center;
-            background-color: #FFE8BE;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
+    </style>
     </style>
 </head>
 <body>
@@ -159,267 +98,88 @@
         <p>Dit is wat ik allemaal voor je kan bereiden</p>
     </header>
 
-    <div class="info-text">
-        <p>👇 Klik op een gerecht om de ingrediënten te bekijken! 👇</p>
-    </div>
-
     <section class="gerechten-container">
         <!-- Gerecht 1 -->
-        <div class="gerecht" onclick="openModal('crispy-rice')">
+        <div class="gerecht">
             <img src="https://i.imgur.com/EUMg1OL.jpeg" alt="Crispy Rice Salade">
             <div class="gerecht-info">
                 <span class="categorie">Aziatisch</span>
                 <h3 class="gerecht-titel">Crispy Rice Salade</h3>
                 <p>Helemaal hip. Je moet wel van tonijn houden. En dit moet ik een dag van te voren weten!</p>
-                <button class="ingredienten-knop">Bekijk ingrediënten</button>
             </div>
         </div>
 
         <!-- Gerecht 2 -->
-        <div class="gerecht" onclick="openModal('thaise-curry')">
+        <div class="gerecht">
             <img src="https://i.imgur.com/Fi7Mp2Q.jpeg" alt="Thaise Curry">
             <div class="gerecht-info">
                 <span class="categorie">Aziatisch</span>
                 <h3 class="gerecht-titel">Thaise Curry</h3>
                 <p>Hiervoor maak ik mijn eigen curry paste! Lekker met garnalen, vega kip of geroosterde groenten.</p>
-                <button class="ingredienten-knop">Bekijk ingrediënten</button>
             </div>
         </div>
 
         <!-- Gerecht 3 -->
-        <div class="gerecht" onclick="openModal('vega-kip-kerrie')">
+        <div class="gerecht">
             <img src="https://i.imgur.com/k1Cfaiz.jpeg" alt="kip kerrie">
             <div class="gerecht-info">
                 <span class="categorie">Aziatisch</span>
                 <h3 class="gerecht-titel">Vega Kip Kerrie</h3>
                 <p>Verbaast me elke keer hoe makkelijk dit is. Met geroosterde sperziebonen voor een crunch!</p>
-                <button class="ingredienten-knop">Bekijk ingrediënten</button>
             </div>
         </div>
 
         <!-- Gerecht 4 -->
-        <div class="gerecht" onclick="openModal('zoete-aardappel-pasta')">
+        <div class="gerecht">
             <img src="https://i.imgur.com/ss0L74o.jpeg" alt="Zoete Aardappel Pasta">
             <div class="gerecht-info">
                 <span class="categorie">Mediteraans</span>
                 <h3 class="gerecht-titel">Zoete aardappel pasta</h3>
                 <p>Klinkt gek, maar het werkt heeel goed. Moet nog experimenteren welke groente erbij past!</p>
-                <button class="ingredienten-knop">Bekijk ingrediënten</button>
             </div>
         </div>
 
         <!-- Gerecht 5 -->
-        <div class="gerecht" onclick="openModal('gnocchi')">
+        <div class="gerecht">
             <img src="https://i.imgur.com/xNUjfZg.jpeg" alt="Gnocchi">
             <div class="gerecht-info">
                 <span class="categorie">Mediteraans</span>
                 <h3 class="gerecht-titel">Gnocchi</h3>
                 <p>'Gnocchi' is Italiaans voor 'kont'! Gnocchi moet je eerst koken, dan krokant bakken. De saus staat wel vier uur op.</p>
-                <button class="ingredienten-knop">Bekijk ingrediënten</button>
             </div>
         </div>
 
         <!-- Gerecht 6 -->
-        <div class="gerecht" onclick="openModal('salmari-eitjes')">
+        <div class="gerecht">
             <img src="https://i.imgur.com/0I1JgQn.jpeg" alt="Salmari eitjes">
             <div class="gerecht-info">
                 <span class="categorie">Oer-Hollands</span>
                 <h3 class="gerecht-titel">Salmari Eitjes</h3>
                 <p>Bedoeld als aperitief! Niet lekker. Wel heel grappig.</p>
-                <button class="ingredienten-knop">Bekijk ingrediënten</button>
             </div>
         </div>
 
         <!-- Gerecht 7 -->
-        <div class="gerecht" onclick="openModal('noodle-soup')">
+        <div class="gerecht">
             <img src="https://i.imgur.com/GZaRDom.jpeg" alt="Golden Noodle Soup">
             <div class="gerecht-info">
                 <span class="categorie">Aziatisch</span>
                 <h3 class="gerecht-titel">Golden Noodle Soup</h3>
                 <p>Soep is een breed begrip, maar deze shit is goud waard. Wil je proeven.</p>
-                <button class="ingredienten-knop">Bekijk ingrediënten</button>
             </div>
         </div>
 
         <!-- Gerecht 8 -->
-        <div class="gerecht" onclick="openModal('mystery-pasta')">
+        <div class="gerecht">
             <img src="https://i.imgur.com/ss0L74o.jpeg" alt="Geen Idee Wat Voor Pasta Dit Is">
             <div class="gerecht-info">
                 <span class="categorie">Mediteraans</span>
                 <h3 class="gerecht-titel">Geen Idee Wat Voor Pasta Dit Is</h3>
                 <p>Oprecht niet. Maar ik heb er wel een foto van. Ik probeer het wel na te maken ofzo?</p>
-                <button class="ingredienten-knop">Bekijk ingrediënten</button>
             </div>
         </div>
     </section>
 
-    <!-- Modals voor ingrediënten -->
-    <div id="crispy-rice" class="modal">
-        <div class="modal-content">
-            <span class="sluit-knop" onclick="closeModal('crispy-rice')">&times;</span>
-            <h2>Ingrediënten Crispy Rice Salade</h2>
-            <ul class="ingredienten-lijst">
-                <li>Sushirijst</li>
-                <li>Verse tonijn (sashimi kwaliteit)</li>
-                <li>Mayonaise</li>
-                <li>Sriracha saus</li>
-                <li>Sojasaus</li>
-                <li>Sesamolie</li>
-                <li>Avocado</li>
-                <li>Komkommer</li>
-                <li>Lente-ui</li>
-                <li>Nori vellen</li>
-                <li>Sesamzaadjes</li>
-            </ul>
-            <p><strong>Allergenen:</strong> Vis, soja, sesam, eieren (in mayonaise)</p>
-        </div>
-    </div>
-
-    <div id="thaise-curry" class="modal">
-        <div class="modal-content">
-            <span class="sluit-knop" onclick="closeModal('thaise-curry')">&times;</span>
-            <h2>Ingrediënten Thaise Curry</h2>
-            <ul class="ingredienten-lijst">
-                <li>Kokosmelk</li>
-                <li>Rode currypasta (zelfgemaakt)</li>
-                <li>Keuze uit: garnalen, vega kip of gemengde groenten</li>
-                <li>Thaise aubergine</li>
-                <li>Bamboe scheuten</li>
-                <li>Rode paprika</li>
-                <li>Thaise basilicum</li>
-                <li>Limoenblad</li>
-                <li>Vissaus (kan vegetarisch worden gemaakt)</li>
-                <li>Palmsuiker</li>
-                <li>Limoen</li>
-                <li>Jasmijnrijst</li>
-            </ul>
-            <p><strong>Allergenen:</strong> Schaaldieren (garnalen), soja (vega kip), vis (vissaus)</p>
-        </div>
-    </div>
-
-    <div id="vega-kip-kerrie" class="modal">
-        <div class="modal-content">
-            <span class="sluit-knop" onclick="closeModal('vega-kip-kerrie')">&times;</span>
-            <h2>Ingrediënten Vega Kip Kerrie</h2>
-            <ul class="ingredienten-lijst">
-                <li>Vega kipstukjes</li>
-                <li>Kerriepoeder</li>
-                <li>Kokosmelk</li>
-                <li>Ui</li>
-                <li>Knoflook</li>
-                <li>Gember</li>
-                <li>Sperziebonen</li>
-                <li>Aardappelen</li>
-                <li>Kurkuma</li>
-                <li>Komijn</li>
-                <li>Koriander</li>
-                <li>Basmatirijst</li>
-            </ul>
-            <p><strong>Allergenen:</strong> Soja (in vega kipstukjes)</p>
-        </div>
-    </div>
-
-    <div id="zoete-aardappel-pasta" class="modal">
-        <div class="modal-content">
-            <span class="sluit-knop" onclick="closeModal('zoete-aardappel-pasta')">&times;</span>
-            <h2>Ingrediënten Zoete Aardappel Pasta</h2>
-            <ul class="ingredienten-lijst">
-                <li>Zoete aardappel</li>
-                <li>Pasta (bijv. penne of rigatoni)</li>
-                <li>Ui</li>
-                <li>Knoflook</li>
-                <li>Salie</li>
-                <li>Parmezaanse kaas</li>
-                <li>Roomboter</li>
-                <li>Olijfolie</li>
-                <li>Peper</li>
-                <li>Zout</li>
-                <li>Optioneel: walnoten</li>
-            </ul>
-            <p><strong>Allergenen:</strong> Gluten (pasta), melk (boter en kaas), noten (optioneel)</p>
-        </div>
-    </div>
-
-    <div id="gnocchi" class="modal">
-        <div class="modal-content">
-            <span class="sluit-knop" onclick="closeModal('gnocchi')">&times;</span>
-            <h2>Ingrediënten Gnocchi</h2>
-            <ul class="ingredienten-lijst">
-                <li>Aardappelen</li>
-                <li>Bloem</li>
-                <li>Ei</li>
-                <li>Parmezaanse kaas</li>
-                <li>Voor de saus:</li>
-                <li>Tomaten</li>
-                <li>Ui</li>
-                <li>Knoflook</li>
-                <li>Wortel</li>
-                <li>Bleekselderij</li>
-                <li>Rode wijn</li>
-                <li>Rundvlees of vegetarisch alternatief</li>
-                <li>Basilicum</li>
-                <li>Oregano</li>
-                <li>Laurierblad</li>
-            </ul>
-            <p><strong>Allergenen:</strong> Gluten (bloem), ei, melk (kaas)</p>
-        </div>
-    </div>
-
-    <div id="salmari-eitjes" class="modal">
-        <div class="modal-content">
-            <span class="sluit-knop" onclick="closeModal('salmari-eitjes')">&times;</span>
-            <h2>Ingrediënten Salmari Eitjes</h2>
-            <ul class="ingredienten-lijst">
-                <li>Eieren</li>
-                <li>Salmiakpoeder</li>
-                <li>Zwarte voedselkleurstof</li>
-                <li>Zout</li>
-            </ul>
-            <p><strong>Allergenen:</strong> Ei</p>
-            <p><em>Waarschuwing: Deze zijn echt niet lekker, maar wel grappig!</em></p>
-        </div>
-    </div>
-
-    <div id="noodle-soup" class="modal">
-        <div class="modal-content">
-            <span class="sluit-knop" onclick="closeModal('noodle-soup')">&times;</span>
-            <h2>Ingrediënten Golden Noodle Soup</h2>
-            <ul class="ingredienten-lijst">
-                <li>Kokosmelk</li>
-                <li>Kurkuma</li>
-                <li>Gember</li>
-                <li>Knoflook</li>
-                <li>Citroengras</li>
-                <li>Chilipeper</li>
-                <li>Groentebouillon</li>
-                <li>Rijstnoedels</li>
-                <li>Taugé</li>
-                <li>Paksoi</li>
-                <li>Tofu of kip</li>
-                <li>Koriander</li>
-                <li>Limoen</li>
-            </ul>
-            <p><strong>Allergenen:</strong> Soja (tofu)</p>
-        </div>
-    </div>
-
-    <div id="mystery-pasta" class="modal">
-        <div class="modal-content">
-            <span class="sluit-knop" onclick="closeModal('mystery-pasta')">&times;</span>
-            <h2>Ingrediënten Mystery Pasta</h2>
-            <ul class="ingredienten-lijst">
-                <li>Pasta (welk type? Geen idee!)</li>
-                <li>Waarschijnlijk wat kruiden</li>
-                <li>Mogelijk wat groenten</li>
-                <li>Misschien een saus?</li>
-                <li>¯\_(ツ)_/¯</li>
-            </ul>
-            <p><strong>Allergenen:</strong> Gluten (pasta), verder onbekend</p>
-            <p><em>Eerlijk? Ik heb geen idee wat dit is, maar ik kan proberen het na te maken als je het wilt!</em></p>
-        </div>
-    </div>
-
-    
 
     <script>
         // Functie om modal te openen
